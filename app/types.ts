@@ -1,5 +1,23 @@
 import * as z from 'zod';
 
+export const postSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  content: z.string(),
+  published: z.boolean(),
+  createdAt: z.iso.datetime(),
+  updatedAt: z.iso.datetime(),
+  authorId: z.number(),
+  author: z.object({ username: z.string() }),
+});
+
+export const postsResSechema = z.object({
+  posts: z.array(postSchema),
+  page: z.number(),
+  pageSize: z.number(),
+  totalPosts: z.number(),
+});
+
 export type UserRole = 'ADMIN' | 'USER';
 
 export type User = {
@@ -41,3 +59,6 @@ export const loginResSchema = z.union([
 ]);
 
 export type UserTokenPayload = z.infer<typeof userTokenPayloadSchema>;
+
+export type Post = z.infer<typeof postSchema>;
+export type PostsRes = z.infer<typeof postsResSechema>;
