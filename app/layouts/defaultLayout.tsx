@@ -28,7 +28,7 @@ export default function DefaultLayout() {
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/posts/new">Create post</Link>
+              <Link to="/posts/create">Create post</Link>
             </li>
           </ul>
         </nav>
