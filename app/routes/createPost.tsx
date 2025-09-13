@@ -10,6 +10,7 @@ const API_HOST = import.meta.env.VITE_API_URL;
 const postDataSchema = z.object({
   title: z.string().trim().min(1),
   content: z.string().trim().min(1),
+  featuredImg: z.string().trim().min(1),
   published: z.string().transform((val) => Boolean(val)),
 });
 

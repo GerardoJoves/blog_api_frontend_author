@@ -4,6 +4,7 @@ export const postSchema = z.object({
   id: z.number(),
   title: z.string(),
   content: z.string(),
+  featuredImg: z.string(),
   published: z.boolean(),
   createdAt: z.iso.datetime(),
   updatedAt: z.iso.datetime(),

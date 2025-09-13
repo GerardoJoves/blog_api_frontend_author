@@ -20,6 +20,7 @@ export default function Post({ loaderData }: Route.ComponentProps) {
     <div className="p-4">
       <Link to={`/posts/${post.id}/edit`}>Edit post</Link>
       <h1 className="text-xl font-bold my-4">{post.title}</h1>
+      <img src={post.featuredImg} alt="Featured image" />
       <ul className="mb-4">
         <li>Published: {String(post.published)}</li>
         <li>Author: {post.author.username}</li>

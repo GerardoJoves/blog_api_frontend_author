@@ -3,12 +3,14 @@ import { Form } from 'react-router';
 type PostFormProps = {
   title?: string;
   content?: string;
+  featuredImg?: string;
   published?: boolean;
 };
 
 export default function PostForm({
   title = '',
   content = '',
+  featuredImg = '',
   published = true,
 }: PostFormProps) {
   return (
@@ -23,6 +25,18 @@ export default function PostForm({
           id="title"
           className="border border-white p-2 resize"
           defaultValue={title}
+        />
+      </section>
+      <section className="mb-4">
+        <label htmlFor="featured-image" className="block">
+          Featured Image
+        </label>
+        <textarea
+          cols={60}
+          name="featuredImg"
+          id="featured-image"
+          className="border border-white p-2 resize"
+          defaultValue={featuredImg}
         />
       </section>
       <section className="flex gap-4 mb-4">
